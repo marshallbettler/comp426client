@@ -12,6 +12,7 @@ const Login = () => {
 
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    const [status, setStatus] = useState("")
     
     const[loginStatus, setLoginStatus] = useState(false);
 
@@ -23,6 +24,7 @@ const login = async () => {
         
         if(!response.data.auth) {
             setLoginStatus(false);
+            setStatus("Incorrect username/password combination");
         } else {
             localStorage.setItem("token", response.data.token)
             localStorage.setItem("auth", "true")
@@ -52,6 +54,7 @@ useEffect( () => {
                 <input type ="password" onChange = {(e) => { setPassword(e.target.value)}}></input><br></br>
                 <button type="button" onClick={login}>Login</button>
             </form>
+            <h1>{(status !== "") && <h3>{status}</h3>}</h1>
             <h1>{(localStorage.getItem("auth") === "true") && (<h3>You are logged in!</h3>)}</h1>
             <h1>{(localStorage.getItem("auth") === "false") && (<h3>You are not currently logged in!</h3>)}</h1>
             <h3>Not signed up?</h3>
