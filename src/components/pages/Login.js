@@ -54,7 +54,7 @@ useEffect( () => {
                 <input type ="password" onChange = {(e) => { setPassword(e.target.value)}}></input><br></br>
                 <button type="button" onClick={login}>Login</button>
             </form>
-            <h1>{(status !== "") && (<h3>{status}</h3>)}</h1>
+            {(status !== "") && (<h3>{status}</h3>)}
             <h1>{(localStorage.getItem("auth") === "true") && (<h3>You are logged in!</h3>)}</h1>
             <h1>{(localStorage.getItem("auth") === "false") && (<h3>You are not currently logged in!</h3>)}</h1>
             <h3>Not signed up?</h3>
