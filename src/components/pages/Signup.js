@@ -21,7 +21,7 @@ const Signup = () => {
     };
 
     const submitSignup = () => {
-        axios.post("https://comp426-marshallbettler.herokuapp.com/insert", {
+        axios.post("https://comp426-marshallbettler.herokuapp.com/api/insert", {
             username: username, 
             password: password
         }).then((response) => {
