@@ -24,7 +24,7 @@ const Signup = () => {
         axios.post("https://comp426-marshallbettler.herokuapp.com/insert", {
             username: username, 
             password: password
-        }).then((response) => {
+        },{withCredentials:true}).then((response) => {
             if(response.data.message) {
                 setRegisterStatus(response.data.message);
             } else {
