@@ -18,6 +18,7 @@ const YouTubePage = () => {
     const onSubmit = (e) => {
         e.preventDefault()
         setCurrentList([]);
+        setCurrentTitle([]);
         onSearch(currentSearch);
         
         
