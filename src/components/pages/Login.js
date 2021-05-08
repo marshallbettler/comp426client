@@ -55,8 +55,8 @@ useEffect( () => {
                 <button type="button" onClick={login}>Login</button>
             </form>
             {(status !== "") && (<h3>{status}</h3>)}
-            <h1>{(localStorage.getItem("auth") === "true") && (<h3>You are logged in!</h3>)}</h1>
-            <h1>{(localStorage.getItem("auth") === "false") && (<h3>You are not currently logged in!</h3>)}</h1>
+            {(localStorage.getItem("auth") === "true") && (<h2>You are logged in!</h2>)}
+            {(localStorage.getItem("auth") === "false") && (<h2>You are not currently logged in!</h2>)}
             <h3>Not signed up?</h3>
             <Link to='/signup'>Signup Here!</Link><br></br>
             <br></br>
